@@ -1,0 +1,376 @@
+---
+question: Start
+subquestion: |
+  disclaimer
+  incl. SA jurisdiction + not  legal advice
+continue button field: LSC_welcome_screen
+---
+# MISC SCREENS - ELENI
+question: DD offence Question
+subquestion: |
+  screen content here - e.g. have you been charged with a drink driving offence?
+field: LSC_charged_with_drink_driving_offence
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Other offence Question
+subquestion: |
+  if no to previous charged with other offence question 
+field: LSC_charged_with_other
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Not charged with other- seeking general info
+subquestion: |
+  screen content 
+continue button field: LSC_seeking_gen_info
+---
+event: LSC_gen_info_screen
+question: End
+subquestion: |
+  display LSC drink driving fact sheet + help line
+---
+question: Yes charged with other 
+subquestion: |
+  LSC directory link
+continue button field: LSC_directory_Screen
+---
+question: Yes DD charge start of interview 
+subquestion: |
+  I would like to know more about how (charge will effect me) 
+field: LSC_define_charge
+buttons:
+  - "LSC_DUI"
+  - "LSC_PCA"
+  - "LSC_RT"
+---
+# DUI SCREENS - KYLA
+question: Question
+subquestion: |
+  was a child present at the time of the DUI
+field: LSC_child_present_DUI
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Question
+subquestion: |
+  No child - first offence question 
+field: LSC_first_offence_question_no_child
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for subsequent DUI offence with no child
+continue button field: LSC_subsequent_offence_no_c
+---
+# MISC SCREEN - ELENI
+event: LSC_end_screen
+question: End
+subquestion: |
+  sample text: we hope this has been helpful, for further guidance please reach out the LSC at (08) 8223 2999
+---
+# DUI SCREENS - KYLA
+question: Notice
+subquestion: |
+  display penalties for first DUI offence with no child
+continue button field: LSC_first_offence_no_c
+---
+question: Question
+subquestion: |
+  first offence but child present question 
+field: LSC_first_offence_question_yes_c_DUI
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for subsequent offence with child in car
+continue button field: LSC_subsequent_offence_yes_c
+---
+question: Notice
+subquestion: |
+  display penalties for first offence wth child in car
+continue button field: LSC_first_offence_yes_c
+---
+# REFUSE BREATH TEST SCREENS - ANARA
+question: Question
+subquestion: |
+  first offence question for refusing breath test (RT) 
+field: LSC_first_offence_q_RT
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Question
+subquestion: |
+  child present when present for subsequent RT offence
+field: LSC_child_present_RT
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for subsequent RT with no child in car
+continue button field: LSC_subsequent_RT_no_c
+---
+question: Notice
+subquestion: |
+  display penalties for subsequent RT offence with child in car 
+continue button field: LSC_subsequent_RT_yes_c
+---
+question: Question
+subquestion: |
+  First RT offence - child present question
+field: LSC_child_present_first_RT
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for frist RT offence with no child
+continue button field: LSC_first_RT_no_c
+---
+question: Notice
+subquestion: |
+  display penalties for first RT offence with child
+continue button field: LSC_first_RT_yes_c
+---
+# PCA SCREENS - JOSH
+question: Question
+subquestion: |
+  PCA offence - licence class question
+field: LSC_licence_class
+buttons:
+  - "LSC_full_license"
+  - "LSC_learners_provisional"
+---
+question: Notice
+subquestion: |
+  provisional licence PCA penalties screen
+continue button field: LSC_provisional_PCA
+---
+question: Question
+subquestion: |
+  full licence PCA - first offence question
+field: LSC_PCA_first_offence_question
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Question
+subquestion: |
+  first offence BAC range question
+field: LSC_BAC_range_question
+buttons:
+  - "LSC_high_BAC"
+  - "LSC_low_BAC"
+  - "LSC_mid_BCA"
+---
+question: Notice
+subquestion: |
+  first offence PCA - low BAC penalties screen
+continue button field: LSC_FO_PCA_low_BAC
+---
+question: Question
+subquestion: |
+  first offence - mid BAC - child present question
+field: LSC_PCA_FO_PCA_mid_BAC_child_question
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for mid BAC with no child
+continue button field: LSC_FO_PCA_mid_BAC_no_c
+---
+question: Notice
+subquestion: |
+  display penalties for mid BAC with child present 
+continue button field: LSC_FO_PCA_mid_BAC_yes_c
+---
+question: Question
+subquestion: |
+  high BAC PCA - child presnet? 
+field: LSC_PCA_FO_high_BAC_child_question
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for high BAC first offence with no child
+continue button field: LSC_PCA_FO_high_BAC_no_c
+---
+question: Notice
+subquestion: |
+  display penalties for high BAC first offence with child
+continue button field: LSC_PCA_FO_high_BAC_child_y
+---
+question: Question
+subquestion: |
+  which subsequent offence bracket 
+field: LSC_PCA_subsequent_offence_number_question
+buttons:
+  - "LSC_PCA_second"
+  - "LSC_PCA_subsequent"
+  - "LSC_PCA_third"
+---
+question: Question
+subquestion: |
+  second offence BAC question
+field: LSC_PCA_SO_BAC_question
+buttons:
+  - "LSC_high_BAC_so"
+  - "LSC_low_BAC_so"
+  - "LSC_mid_BAC_so"
+---
+question: Question
+subquestion: |
+  third offence BAC question
+field: LSC_PCA_TO_BAC_question
+buttons:
+  - "LSC_high_BAC_to"
+  - "LSC_low_BAC_to"
+  - "LSC_mid_BAC_to"
+---
+question: Question
+subquestion: |
+  subsequent offence BAC question
+field: LSC_PCA_SUB_BAC_question
+buttons:
+  - "LSC_SUB_high_BAC"
+  - "LSC_SUB_low_BAC"
+  - "LSC_SUB_mid_BAC"
+---
+question: Notice
+subquestion: |
+  display penalties for second offence - low BAC
+continue button field: LSC_PCA_SO_low_BAC
+---
+question: Question
+subquestion: |
+  SECOND OFFENCE - mid range BAC - child present question
+field: LSC_PCA_SO_mid_BAC_child_question
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for mid BAC with no child
+continue button field: LSC_PCA_SO_mid_BAC_child_n
+---
+question: Notice
+subquestion: |
+  display penalties for mid BAC with child
+continue button field: LSC_PCA_SO_mid_BAC_child_y
+---
+question: Question
+subquestion: |
+  high BAC - was child present? second offence
+field: LSC_PCA_SO_high_BAC_child_question
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for high BAC second offence with no child
+continue button field: LSC_PCA_high_BAC_child_n
+---
+question: Notice
+subquestion: |
+  display penalties for high BAC second offence with child
+continue button field: LSC_PCA_high_BAC_child_y
+---
+question: Notice
+subquestion: |
+  display penalties for third offence with low BAC
+continue button field: LSC_PCA_TO_low_BAC
+---
+question: Question
+subquestion: |
+  BAC question for third offence
+field: LSC_PCA_TO_mid_BAC_questions
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for third offence mid BAC with child
+continue button field: LSC_PCA_TO_mid_BAC_child_y
+---
+question: Notice
+subquestion: |
+  display penalties for third offence mid BAC without child
+continue button field: LSC_PCA_TO_mid_BAC_child_n
+---
+question: Question
+subquestion: |
+  high BAC child present question
+field: LSC_PCA_TO_high_BAC_child_question
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for third offence high BAC with child 
+continue button field: LSC_PCA_TO_high_BAC_child_y
+---
+question: Notice
+subquestion: |
+  display penalties for third offence High BAC with child
+continue button field: LSC_PCA_TO_high_BAC_child_n
+---
+question: Notice
+subquestion: |
+  display penalties for subsequent offence with low BAC
+continue button field: LSC_SUB_low_BAC
+---
+question: Question
+subquestion: |
+  subsequent offence - mid BAC child question
+field: LSC_PCA_SUB_mid_BAC_child_quesiton
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for subsequent offence with mid BAC and child
+continue button field: LSC_PCA_SUB_mid_BAC_child_y
+---
+question: Notice
+subquestion: |
+  display penalties for subsequent offence with mid BAC with no child
+continue button field: LSC_PCA_SUB_mid_BAC_child_n
+---
+question: Question
+subquestion: |
+  subsequent offence high BAC - child question
+field: LSC_PCA_SUB_high_BAC_child_question
+buttons:
+  - "No"
+  - "Yes"
+---
+question: Notice
+subquestion: |
+  display penalties for subsequent offence with high BAC with child
+continue button field: LSC_PCA_SUB_high_BAC_child_y
+---
+question: Notice
+subquestion: |
+  display penalties for subsequent offence with high BAC - no child
+continue button field: LSC_PCA_SUB_high_BAC_child_n
+---

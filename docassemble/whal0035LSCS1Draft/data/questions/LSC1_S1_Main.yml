@@ -1,0 +1,124 @@
+---
+include: 
+  - LSC_S1_Questions.yml
+---
+mandatory: True
+code: |
+  LSC_welcome_screen
+  if LSC_charged_with_drink_driving_offence == 'No':
+    if LSC_charged_with_other == 'No':
+      LSC_seeking_gen_info
+      LSC_gen_info_screen
+    if LSC_charged_with_other == 'Yes':
+      LSC_directory_Screen
+      LSC_gen_info_screen
+  if LSC_charged_with_drink_driving_offence == 'Yes':
+    if LSC_define_charge == 'LSC_DUI':
+      if LSC_child_present_DUI == 'No':
+        if LSC_first_offence_question_no_child == 'No':
+          LSC_subsequent_offence_no_c
+          LSC_end_screen
+        if LSC_first_offence_question_no_child == 'Yes':
+          LSC_first_offence_no_c
+          LSC_end_screen
+      if LSC_child_present_DUI == 'Yes':
+        if LSC_first_offence_question_yes_c_DUI == 'No':
+          LSC_subsequent_offence_yes_c
+          LSC_end_screen
+        if LSC_first_offence_question_yes_c_DUI == 'Yes':
+          LSC_first_offence_yes_c
+          LSC_end_screen
+    if LSC_define_charge == 'LSC_RT':
+      if LSC_first_offence_q_RT == 'No':
+        if LSC_child_present_RT == 'No':
+          LSC_subsequent_RT_no_c
+          LSC_end_screen
+        if LSC_child_present_RT == 'Yes':
+          LSC_subsequent_RT_yes_c
+          LSC_end_screen
+      if LSC_first_offence_q_RT == 'Yes':
+        if LSC_child_present_first_RT == 'No':
+          LSC_first_RT_no_c
+          LSC_end_screen
+        if LSC_child_present_first_RT == 'Yes':
+          LSC_first_RT_yes_c
+          LSC_end_screen
+    if LSC_define_charge == 'LSC_PCA':
+      if LSC_licence_class == 'LSC_learners_provisional':
+        LSC_provisional_PCA
+        LSC_end_screen
+      if LSC_licence_class == 'LSC_full_license':
+        if LSC_PCA_first_offence_question == 'Yes':
+          if LSC_BAC_range_question == 'LSC_low_BAC':
+            LSC_FO_PCA_low_BAC
+            LSC_end_screen
+          if LSC_BAC_range_question == 'LSC_mid_BCA':
+            if LSC_PCA_FO_PCA_mid_BAC_child_question == 'No':
+              LSC_FO_PCA_mid_BAC_no_c
+              LSC_end_screen
+            if LSC_PCA_FO_PCA_mid_BAC_child_question == 'Yes':
+              LSC_FO_PCA_mid_BAC_yes_c
+              LSC_end_screen
+          if LSC_BAC_range_question == 'LSC_high_BAC':
+            if LSC_PCA_FO_high_BAC_child_question == 'No':
+              LSC_PCA_FO_high_BAC_no_c
+              LSC_end_screen
+            if LSC_PCA_FO_high_BAC_child_question == 'Yes':
+              LSC_PCA_FO_high_BAC_child_y
+              LSC_end_screen
+        if LSC_PCA_first_offence_question == 'No':
+          if LSC_PCA_subsequent_offence_number_question == 'LSC_PCA_second':
+            if LSC_PCA_SO_BAC_question == 'LSC_low_BAC_so':
+              LSC_PCA_SO_low_BAC
+              LSC_end_screen
+            if LSC_PCA_SO_BAC_question == 'LSC_mid_BAC_so':
+              if LSC_PCA_SO_mid_BAC_child_question == 'No':
+                LSC_PCA_SO_mid_BAC_child_n
+                LSC_end_screen
+              if LSC_PCA_SO_mid_BAC_child_question == 'Yes':
+                LSC_PCA_SO_mid_BAC_child_y
+                LSC_end_screen
+            if LSC_PCA_SO_BAC_question == 'LSC_high_BAC_so':
+              if LSC_PCA_SO_high_BAC_child_question == 'No':
+                LSC_PCA_high_BAC_child_n
+                LSC_end_screen
+              if LSC_PCA_SO_high_BAC_child_question == 'Yes':
+                LSC_PCA_high_BAC_child_y
+                LSC_end_screen
+          if LSC_PCA_subsequent_offence_number_question == 'LSC_PCA_third':
+            if LSC_PCA_TO_BAC_question == 'LSC_low_BAC_to':
+              LSC_PCA_TO_low_BAC
+              LSC_end_screen
+            if LSC_PCA_TO_BAC_question == 'LSC_mid_BAC_to':
+              if LSC_PCA_TO_mid_BAC_questions == 'Yes':
+                LSC_PCA_TO_mid_BAC_child_y
+                LSC_end_screen
+              if LSC_PCA_TO_mid_BAC_questions == 'No':
+                LSC_PCA_TO_mid_BAC_child_n
+                LSC_end_screen
+            if LSC_PCA_TO_BAC_question == 'LSC_high_BAC_to':
+              if LSC_PCA_TO_high_BAC_child_question == 'Yes':
+                LSC_PCA_TO_high_BAC_child_y
+                LSC_end_screen
+              if LSC_PCA_TO_high_BAC_child_question == 'No':
+                LSC_PCA_TO_high_BAC_child_n
+                LSC_end_screen
+          if LSC_PCA_subsequent_offence_number_question == 'LSC_PCA_subsequent':
+            if LSC_PCA_SUB_BAC_question == 'LSC_SUB_low_BAC':
+              LSC_SUB_low_BAC
+              LSC_end_screen
+            if LSC_PCA_SUB_BAC_question == 'LSC_SUB_mid_BAC':
+              if LSC_PCA_SUB_mid_BAC_child_quesiton == 'Yes':
+                LSC_PCA_SUB_mid_BAC_child_y
+                LSC_end_screen
+              if LSC_PCA_SUB_mid_BAC_child_quesiton == 'No':
+                LSC_PCA_SUB_mid_BAC_child_n
+                LSC_end_screen
+            if LSC_PCA_SUB_BAC_question == 'LSC_SUB_high_BAC':
+              if LSC_PCA_SUB_high_BAC_child_question == 'Yes':
+                LSC_PCA_SUB_high_BAC_child_y
+                LSC_end_screen
+              if LSC_PCA_SUB_high_BAC_child_question == 'No':
+                LSC_PCA_SUB_high_BAC_child_n
+                LSC_end_screen
+---
